@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ProgrammingAndroid20161203</string>
+
+    <string name="facebook_app_id">364507920569494</string>
+
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">Dummy Content</string>
+</resources>
