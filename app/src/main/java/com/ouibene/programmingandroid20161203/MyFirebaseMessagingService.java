@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.sdsmdg.tastytoast.TastyToast;
 
 /**
  * Created by Youngeun-Lee on 2016. 12. 10..
@@ -28,13 +29,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
     }
 
-            void toast (final String message) {
-            Handler handler = new Handler(Looper.getMainLooper());
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-                }
-            });
-        } //push 구현. notification을 사용하면 background에서는 푸시받을 수 없음
-    }
+    void toast (final String message) {
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                TastyToast.makeText(getApplicationContext(), message, TastyToast.LENGTH_LONG, TastyToast.INFO);
+            }
+        });
+    } //push 구현. notification을 사용하면 background에서는 푸시받을 수 없음
+}
